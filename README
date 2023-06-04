@@ -19,7 +19,7 @@ sudo adduser {tên người dùng}
 # 3. Thêm user đó vào danh sách người dùng root
 usermod -aG sudo {tên người dùng}
 
-# 4. Tạo shh key trên máy chủ
+# 4. Tạo shh key trên máy chủ ( add vào github v.v.. nếu cần)
 ssh-keygen -t rsa -b 4096
 
 # 5. Tạo thư mục chứng chứa key chứng thực ( nếu chưa có )

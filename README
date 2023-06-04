@@ -62,7 +62,7 @@ apt-get update
 apt-get -y install docker-ce docker-ce-cli containerd.io
 docker --version
 
-# 6. Tạo thư mục docker ( nếu cần )
+# 6. Tạo thư mục docker ( nếu cần ) [ Nơi lưu trữ chính: data ( tạo nếu cần ) ]
 mkdir {tên thư mục docker}
 
 # 7. Cấu hình docker ( clone về )

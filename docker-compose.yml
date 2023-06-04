@@ -1,0 +1,26 @@
+services:
+  web:
+    build: ./web
+    volumes:                                                                      # Danh sách dự án đưa vào VM
+      - ../autotradebot:/var/www/html/bibobot
+      # - ../laravel:/var/www/html/laravel
+    ports:
+      - 80:80
+    depends_on:
+      - db
+  db:
+    build: ./mysql
+    hostname: db
+    environment:
+      MYSQL_ROOT_PASSWORD: "phanquan1808"
+    volumes:
+      - ./mysql/data:/var/lib/mysql                                               # Lưu db                
+      - ./mysql/ibdata:/data/mysql                                                # Lưu db 
+      - ./mysql/init:/data/init                                                   # Path chứa seeder
+    ports:
+    - 3306:3306
+  adminer:
+    image: adminer:latest
+    restart: always
+    ports:
+      - 8080:8080

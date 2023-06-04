@@ -1,0 +1,6 @@
+/https-portal/certs
+/logs/httpd
+
+/mysql/data
+/mysql/ibdata
+/mysql/init

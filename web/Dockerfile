@@ -47,3 +47,6 @@ RUN apt-get install -y nodejs
 
 # Cài trình biên dịch scss
 RUN npm install -g sass
+
+# Khởi động module thiết lập ssl
+RUN a2enmod ssl

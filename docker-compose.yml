@@ -3,6 +3,7 @@ services:
     build: ./web
     volumes:                                                                          # Danh sách dự án đưa vào VM
       - ../autotradebot:/var/www/html/bibobot
+      - ../getPriceBot:/var/www/html/getPriceBot
       # - ../laravel:/var/www/html/laravel
 
       - ./web/config/vhost.conf:/etc/apache2/sites-available/000-default.conf         # Thiết lập Virtual Host

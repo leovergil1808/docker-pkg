@@ -7,7 +7,7 @@ services:
       # - ../laravel:/var/www/html/laravel
 
       - ./web/config/vhost.conf:/etc/apache2/sites-available/000-default.conf         # Thiết lập Virtual Host
-      - ./web/ssl:/etc/ssl/lunglinhlenluon.com                    # Danh sách file cấu hình ssl
+      - ./web/ssl:/etc/ssl/lunglinhlenluon.com                                        # Danh sách file cấu hình ssl
     ports:
       - 80:80
       - 443:443

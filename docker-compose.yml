@@ -19,9 +19,9 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "phanquan1808"
     volumes:
-      - ./mysql/data:/var/lib/mysql                                               # Lưu db                
-      - ./mysql/ibdata:/data/mysql                                                # Lưu db 
-      - ./mysql/init:/data/init                                                   # Path chứa seeder
+      - ./mysql/data:/var/lib/mysql                                                   # Lưu db                
+      - ./mysql/ibdata:/data/mysql                                                    # Lưu db 
+      - ./mysql/init:/data/init                                                       # Path chứa seeder
     ports:
     - 3306:3306
   adminer:

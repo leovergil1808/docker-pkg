@@ -4,3 +4,8 @@
 /mysql/data
 /mysql/ibdata
 /mysql/init
+
+/web/config/vhost.conf
+/web/ssl/*.crt
+/web/ssl/*.key
+/web/ssl/*.ca-bundle

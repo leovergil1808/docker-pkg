@@ -79,9 +79,16 @@ mkdir -rf mysql/ibdata
 git clone {url dự án}
 
 # 11. Build container ( tốn thời gian tùy hệ thống và mảng )
-docker compose build
+docker compose build --no-cache
 
-# 12. Chạy web
+# 12. Chỉnh sửa vhost ( nếu cần hoặc phải cấu hình ssl )
+- Tham khảo file default.conf
+- Thiết lập vào file vhost.conf nếu không có thì tạo để mount vào VM
+
+# 13. Thêm các file cấu hình ssl ( nếu cần )
+- Cần thêm 3 file là .crt .key và .ca-bundle khi mua từ nhà cung cấp
+
+# 14. Chạy web
 docker compose up -d
 
 ### Set up cho từng dự án cụ thể
@@ -96,6 +103,11 @@ docker compose up -d
 /var/www/html
 # 2. Thư mục chứa access log mặc định của apache
 /var/log/httpd
+# 3. Thư mục chứa và các file cấu hình thiết lập ssl
+/etc/ssl
+{domain}.crt
+{domain}.key
+My_CA_Bundle.ca-bundle
 
 ### Liên quan đến docker
 # 1. Danh sách container

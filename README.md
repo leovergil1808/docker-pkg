@@ -1,34 +1,34 @@
-# **Đối với cài máy chủ ở local ( máy tính cá nhân )**
-## Liên quan đến wsl
-### 1. Danh sách wsl
+## Đối với cài máy chủ ở local ( máy tính cá nhân )
+### Liên quan đến wsl
+#### 1. Danh sách wsl
 wsl --list
 
-### 2. Mở powershell và xóa wsl ( nếu cần )
+#### 2. Mở powershell và xóa wsl ( nếu cần )
 wsl --unregister <Tên wsl>
 
-# **Cài đặt máy chủ**
-### Tạo ssh key trên máy tính
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/{ten thu muc}/id_rsa
+## Cài đặt máy chủ
+#### Tạo ssh key trên máy tính ( phân loại cho dễ quản lý qua tên thư mục )
+ssh-keygen -t rsa -b 4096 -f ~/.ssh/{tên thư mục}/id_rsa
 
-### 1. Thay đổi mật khẩu đăng nhập root ( nếu cần )
+#### 1. Thay đổi mật khẩu đăng nhập root ( nếu cần )
 sudo passwd root
 
-### 2. Thêm user trên máy chủ ( vì ko nên xài tải khoản root để bảo mật )
+#### 2. Thêm user trên máy chủ ( vì ko nên xài tải khoản root để bảo mật )
 sudo adduser {tên người dùng}
 
-### 3. Thêm user đó vào danh sách người dùng root
+#### 3. Thêm user đó vào danh sách người dùng root
 usermod -aG sudo {tên người dùng}
 
-### 4. Tạo shh key trên máy chủ ( add vào github v.v.. nếu cần)
+#### 4. Tạo shh key trên máy chủ ( add vào github v.v.. nếu cần)
 ssh-keygen -t rsa -b 4096
 
-### 5. Tạo thư mục chứng chứa key chứng thực ( nếu chưa có )
+#### 5. Tạo thư mục chứng chứa key chứng thực ( nếu chưa có )
 mkdir ~/.ssh/
 touch ~/.ssh/authorized_keys
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
 
-### 6. Chỉnh sửa thiết lập ssh trên sv
+#### 6. Chỉnh sửa thiết lập ssh trên sv
 - Mở file thiết lập ssh => vim /etc/ssh/sshd_config
 - Cấp quyển cho phép kết nối bằng public key  => PubkeyAuthentication yes
 - Xóa quyền kết nối bằng mật khẩu => PasswordAuthentication no

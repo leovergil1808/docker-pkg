@@ -1,4 +1,4 @@
-#Đối với cài máy chủ local
+# Đối với cài máy chủ local
 ## Liên quan đến wsl
 # 1. Danh sách wsl
 wsl --list

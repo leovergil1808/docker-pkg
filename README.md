@@ -1,12 +1,12 @@
-# Đối với cài máy chủ local
+# Đối với cài máy chủ ở local ( máy tính cá nhân )
 ## Liên quan đến wsl
-# 1. Danh sách wsl
+### 1. Danh sách wsl
 wsl --list
 
-# 2. Mở powershell và xóa wsl ( nếu cần )
+### 2. Mở powershell và xóa wsl ( nếu cần )
 wsl --unregister <Tên wsl>
 
-### Cài đặt máy chủ
+# Cài đặt máy chủ
 ## Tạo ssh key trên máy tính
 ssh-keygen -t rsa -b 4096 -f ~/.ssh/{ten thu muc}/id_rsa
 

@@ -37,22 +37,22 @@ chmod 600 ~/.ssh/authorized_keys
 - Chạy lại máy chủ sudo service ssh restart
 
 ## Đối với cài đặt OS ( ubuntu )
-#### 1. Cập nhật package 
+#### *1. Cập nhật package*
 apt-get update
 
-#### 2. Cài git và sedet up thông tin liên quan
+#### *2. Cài git và sedet up thông tin liên quan*
 apt-get -y install git  
 git config --global user.name "Quan"  
 git config --global user.email "leovergil@gmail.com"  
 git config --global --list  
 
-#### 3. Cài vim 
+#### *3. Cài vim*
 apt-get -y install vim
 
-#### 4. Cài composer
+#### *4. Cài composer*
 apt-get -y install composer
 
-#### 5. Thêm kho lưu trữ Docker vào hệ thống và cài đặt
+#### *5. Thêm kho lưu trữ Docker vào hệ thống và cài đặt*
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 echo \
   "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
@@ -62,33 +62,33 @@ apt-get update
 apt-get -y install docker-ce docker-ce-cli containerd.io  
 docker --version
 
-#### 6. Tạo thư mục docker ( nếu cần ) [ Nơi lưu trữ chính: data ( tạo nếu cần ) ]
+#### *6. Tạo thư mục docker ( nếu cần ) [ Nơi lưu trữ chính: data ( tạo nếu cần ) ]*
 mkdir {tên thư mục docker}
 
-#### 7. Cấu hình docker ( clone về )
+#### *7. Cấu hình docker ( clone về )*
 git clone {url}
 
-#### 8. Cấp quyền cho toàn bộ file trong docker
+#### *8. Cấp quyền cho toàn bộ file trong docker*
 chmod 0777 *
 
-#### 9. Xóa 2 folder trong mysql là data và ibdata ( nên xóa khi khởi tạo )
+#### *9. Xóa 2 folder trong mysql là data và ibdata ( nên xóa khi khởi tạo )*
 mkdir -rf mysql/data
 mkdir -rf mysql/ibdata
 
-#### 10. Chuẩn bị các dự án cần thiết
+#### *10. Chuẩn bị các dự án cần thiết*
 git clone {url dự án}
 
-#### 11. Build container ( tốn thời gian tùy hệ thống và mảng )
+#### *11. Build container ( tốn thời gian tùy hệ thống và mảng )*
 docker compose build --no-cache
 
-#### 12. Chỉnh sửa vhost ( nếu cần hoặc phải cấu hình ssl )
+#### *12. Chỉnh sửa vhost ( nếu cần hoặc phải cấu hình ssl )*
 - Tham khảo file default.conf
 - Thiết lập vào file vhost.conf nếu không có thì tạo để mount vào VM
 
-#### 13. Thêm các file cấu hình ssl ( nếu cần )
+#### *13. Thêm các file cấu hình ssl ( nếu cần )*
 - Cần thêm 3 file là .crt .key và .ca-bundle khi mua từ nhà cung cấp
 
-#### 14. Chạy web
+#### *14. Chạy web*
 docker compose up -d
 
 ## Cài đặt cho từng dự án cụ thể

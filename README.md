@@ -6,7 +6,7 @@ wsl --list
 #### 2. Mở powershell và xóa wsl ( nếu cần )
 wsl --unregister <Tên wsl>
 
-## Cài đặt máy chủ
+## Đối với cài đặt máy chủ
 #### Tạo ssh key trên máy tính ( phân loại cho dễ quản lý qua tên thư mục )
 ssh-keygen -t rsa -b 4096 -f ~/.ssh/{tên thư mục}/id_rsa
 

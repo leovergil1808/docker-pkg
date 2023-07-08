@@ -29,12 +29,12 @@ chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
 
 ### 6. Chỉnh sửa thiết lập ssh trên sv
-- vim /etc/ssh/sshd_config
-- Cấp quyển cho phép kết nối bằng public key  => PubkeyAuthentication yes
-- Xóa quyền kết nối bằng mật khẩu => PasswordAuthentication no
-- Cấp quyên cho chứng thực bằng thư mục phụ AuthorizedKeysFile      .ssh/authorized_keys .ssh/authorized_keys2
-- Hủy quyền đăng nhập root #PermitRootLogin yes
-- Chạy lại máy chủ sudo service ssh restart
+vim /etc/ssh/sshd_config
+Cấp quyển cho phép kết nối bằng public key  => PubkeyAuthentication yes
+Xóa quyền kết nối bằng mật khẩu => PasswordAuthentication no
+Cấp quyên cho chứng thực bằng thư mục phụ AuthorizedKeysFile      .ssh/authorized_keys .ssh/authorized_keys2
+Hủy quyền đăng nhập root #PermitRootLogin yes
+Chạy lại máy chủ sudo service ssh restart
 
 ### Cài đặt ubuntu
 # 1. Cập nhật package 

@@ -41,10 +41,10 @@ chmod 600 ~/.ssh/authorized_keys
 apt-get update
 
 #### 2. Cài git và sedet up thông tin liên quan
-apt-get -y install git
-git config --global user.name "Quan"
-git config --global user.email "leovergil@gmail.com"
-git config --global --list
+apt-get -y install git 
+git config --global user.name "Quan" 
+git config --global user.email "leovergil@gmail.com" 
+git config --global --list 
 
 #### 3. Cài vim 
 apt-get -y install vim

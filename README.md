@@ -99,6 +99,7 @@ docker compose up -d
 
 
 ## Ghi nhớ
+### Liên quan đến máy chủ
 #### *1. Thư mục chứa source mặc định của apache*
 /var/www/html
 #### *2. Thư mục chứa access log mặc định của apache*
@@ -112,10 +113,9 @@ My_CA_Bundle.ca-bundle
 ### Liên quan đến docker
 #### *1. Danh sách container*
 docker ps
-
 #### *2. Dừng container*
-
+docker stop {container_id}
 #### *3. Xóa container*
-
+docker rm {container_id}
 #### *4. Vào container*
 docker compose exec -it {tên container} bash

@@ -1,4 +1,5 @@
 <h2>Đối với cài máy chủ ở local ( máy tính cá nhân )</h2>
+<h3><i>Liên quan đến wsl</i></h3>
 <pre>
 1. Danh sách wsl
 wsl --list<br>

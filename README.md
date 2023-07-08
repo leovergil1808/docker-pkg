@@ -1,4 +1,4 @@
-## Đối với cài máy chủ ở local ( máy tính cá nhân )
+## <span style="color:red;">Đối với cài máy chủ ở local ( máy tính cá nhân )<span>
 ### Liên quan đến wsl
 #### *1. Danh sách wsl*  
 wsl --list

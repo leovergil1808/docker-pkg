@@ -29,7 +29,7 @@ chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
 
 ### 6. Chỉnh sửa thiết lập ssh trên sv
-- vim /etc/ssh/sshd_config
+- Mở file thiết lập ssh => vim /etc/ssh/sshd_config
 - Cấp quyển cho phép kết nối bằng public key  => PubkeyAuthentication yes
 - Xóa quyền kết nối bằng mật khẩu => PasswordAuthentication no
 - Cấp quyên cho chứng thực bằng thư mục phụ AuthorizedKeysFile      .ssh/authorized_keys .ssh/authorized_keys2

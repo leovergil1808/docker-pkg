@@ -91,14 +91,14 @@ docker compose build --no-cache
 #### 14. Chạy web
 docker compose up -d
 
-### Set up cho từng dự án cụ thể
+## Cài đặt cho từng dự án cụ thể
 # 1. Đối với laravel cần set vhost vào mục public
 
 # 2. Thêm database 
 Đối với dự án php thuần thì phải vào container của mysql import db thì mới chạy dc
 
 
-### Ghi nhớ
+## Ghi nhớ
 # 1. Thư mục chứa source mặc định của apache
 /var/www/html
 # 2. Thư mục chứa access log mặc định của apache
@@ -110,12 +110,12 @@ docker compose up -d
 My_CA_Bundle.ca-bundle
 
 ### Liên quan đến docker
-# 1. Danh sách container
+#### 1. Danh sách container
 docker ps
 
-# 2. Dừng container
+#### 2. Dừng container
 
-# 3. Xóa container
+#### 3. Xóa container
 
-# 4. Vào container
+#### 4. Vào container
 docker compose exec -it {tên container} bash

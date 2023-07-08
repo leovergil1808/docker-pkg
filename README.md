@@ -99,11 +99,11 @@ docker compose up -d
 
 
 ## Ghi nhớ
-# 1. Thư mục chứa source mặc định của apache
+#### 1. Thư mục chứa source mặc định của apache
 /var/www/html
-# 2. Thư mục chứa access log mặc định của apache
+#### 2. Thư mục chứa access log mặc định của apache
 /var/log/httpd
-# 3. Thư mục chứa và các file cấu hình thiết lập ssl
+#### 3. Thư mục chứa và các file cấu hình thiết lập ssl
 /etc/ssl
 {domain}.crt
 {domain}.key

@@ -92,9 +92,9 @@ docker compose build --no-cache
 docker compose up -d
 
 ## Cài đặt cho từng dự án cụ thể
-# 1. Đối với laravel cần set vhost vào mục public
+#### 1. Đối với laravel cần set vhost vào mục public
 
-# 2. Thêm database 
+#### 2. Thêm database 
 Đối với dự án php thuần thì phải vào container của mysql import db thì mới chạy dc
 
 

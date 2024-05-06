@@ -2,6 +2,8 @@
 FROM php:8.2.5-apache
 WORKDIR /var/www/html
 
+RUN apt-get update -y
+
 # Mod Rewrite
 RUN a2enmod rewrite
 
@@ -21,7 +23,7 @@ RUN apt-get update -y && apt-get install -y \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 # PHP Extension
-RUN docker-php-ext-install gettext intl pdo_mysql gd
+RUN docker-php-ext-install gettext intl pdo_mysql gd mysqli
 
 RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j$(nproc) gd
@@ -50,3 +52,9 @@ RUN npm install -g sass
 
 # Khởi động module thiết lập ssl
 RUN a2enmod ssl
+
+# Cài đặt supervisor
+RUN apt-get install -y supervisor
+
+RUN mkdir /script
+RUN chmod 0777 -R /script

@@ -1,14 +1,21 @@
 services:
-  web:
-    build: ./web
+  dev:
+    build: ./dev
     volumes:                                                                          # Danh sách dự án đưa vào VM
       - ../autotradebot:/var/www/html/bibobot
       - ../getPriceBot:/var/www/html/getPriceBot
       - ../ismart:/var/www/html/ismart
+      - ../shop:/var/www/html/shop
+      - ../japanese:/var/www/html/japanese
+      - ../subStandardBingX:/var/www/html/subStandardBingX
       # - ../laravel:/var/www/html/laravel
 
-      - ./web/config/vhost.conf:/etc/apache2/sites-available/000-default.conf         # Thiết lập Virtual Host
-      - ./web/ssl:/etc/ssl/lunglinhlenluon.com                                        # Danh sách file cấu hình ssl
+      - ./dev/config/vhost.conf:/etc/apache2/sites-available/000-default.conf         # Thiết lập Virtual Host
+      - ./dev/ssl:/etc/ssl/lunglinhlenluon.com                                        # Danh sách file cấu hình ssl
+
+      - ./dev/script:/script                                                          # Danh sách các script
+
+      - ./dev/supervisor/conf.d:/etc/supervisor/conf.d                                # Danh sách các cấu hình supervisor
     ports:
       - 80:80
       - 443:443

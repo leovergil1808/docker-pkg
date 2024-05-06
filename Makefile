@@ -11,6 +11,11 @@ up:
 	@echo "Bật docker ..."
 	@echo "\033[0m"
 	docker compose up -d
+
+	@echo "\033[0;32m"
+	@echo "Chạy script up ..."
+	@echo "\033[0m"
+	docker compose exec dev bash -c "sh /script/up.sh"
 down:
 	@echo "\033[0;32m"
 	@echo "Tắt docker ..."
@@ -27,7 +32,7 @@ db:
 	@echo "\033[0m"
 	docker compose exec db bash
 composer-update:
-	docker exec web bash -c "composer update"
+	docker exec dev bash -c "composer update"
 data:
-	docker exec web bash -c "php artisan migrate"
-	docker exec web bash -c "php artisan db:seed"
+	docker exec dev bash -c "php artisan migrate"
+	docker exec dev bash -c "php artisan db:seed"

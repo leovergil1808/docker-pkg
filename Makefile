@@ -7,7 +7,25 @@ build:
 stop:
 	docker-compose stop
 up:
-	docker-compose up -d
+	@echo "\033[0;32m"
+	@echo "Bật docker ..."
+	@echo "\033[0m"
+	docker compose up -d
+down:
+	@echo "\033[0;32m"
+	@echo "Tắt docker ..."
+	@echo "\033[0m"
+	docker compose down
+develop:
+	@echo "\033[0;32m"
+	@echo "Vào container dev..."
+	@echo "\033[0m"
+	docker compose exec dev bash
+db:
+	@echo "\033[0;32m"
+	@echo "Vào container db ..."
+	@echo "\033[0m"
+	docker compose exec db bash
 composer-update:
 	docker exec web bash -c "composer update"
 data:

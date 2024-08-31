@@ -3,7 +3,8 @@ services:
     build: ./dev
     volumes:                                                                          # Danh sách dự án đưa vào VM
       - ../home.html:/var/www/html/index.html
-      - ../autotradebot:/var/www/html/bibobot
+      - ../autotradebot:/var/www/html/autotradebot
+      - ../bibobot:/var/www/html/bibobot
       - ../getPriceBot:/var/www/html/getPriceBot
       - ../ismart:/var/www/html/ismart
       - ../shop:/var/www/html/shop

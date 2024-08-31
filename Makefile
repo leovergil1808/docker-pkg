@@ -11,6 +11,30 @@ BROWN := \033[0;33m
 BLACK := \033[0;30m
 RESET := \033[0m
 
+
+list:
+	@echo "$(GREEN)Danh sách lệnh task"
+
+	@echo "\n$(CYAN)Nhóm lệnh chung"
+	@echo "$(MAGENTA)1. Cài đặt môi trường docker:                    $(YELLOW)make setup"
+	@echo "$(MAGENTA)2. Build docker:                                 $(YELLOW)make build"
+	@echo "$(MAGENTA)3. Dừng docker:                                  $(YELLOW)make stop"
+	@echo "$(MAGENTA)4. Chạy docker:                                  $(YELLOW)make up"
+	@echo "$(MAGENTA)5. Tắt docker:                                   $(YELLOW)make down"
+	@echo "$(MAGENTA)6. Vào container develop:                        $(YELLOW)make develop"
+	@echo "$(MAGENTA)7. Vào container db:                             $(YELLOW)make db"
+
+	@echo "\n$(CYAN)Nhóm supervisor"
+	@echo "$(MAGENTA)1. Hiện danh sách supervisor:                    $(YELLOW)make supervisor-show"
+	@echo "$(MAGENTA)2. Khởi động lại supervisor:                     $(YELLOW)make supervisor-restart name={tên supervisor}"
+
+	@echo "\n$(CYAN)Nhóm composer"
+	@echo "$(MAGENTA)1. Update composer:                              $(YELLOW)make composer-update"
+
+	@echo "\n$(CYAN)Nhóm data"
+	@echo "$(MAGENTA)1. Thực thi dữ liệu:                             $(YELLOW)make data"
+
+	@echo "$(RESET)"
 setup:
 	@make build
 	@make up 

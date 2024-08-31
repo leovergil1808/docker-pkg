@@ -17,7 +17,11 @@ RUN apt-get update -y && apt-get install -y \
     libjpeg-dev \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
-    libpng-dev 
+    libpng-dev
+
+RUN apt-get update && \
+    apt-get install -y libgmp-dev && \
+    docker-php-ext-install gmp bcmath
 
 # Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -40,7 +44,7 @@ RUN apt-get -y install unzip
 # Cài trình soạn thảo Vim
 RUN apt-get -y install vim
 
-#  Cài wget để tải các tệp tin từ Internet.
+# Cài wget để tải các tệp tin từ Internet
 RUN apt-get install -y wget
 
 # Cài node 16

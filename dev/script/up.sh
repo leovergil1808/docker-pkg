@@ -11,6 +11,10 @@ supervisorctl reread
 supervisorctl update
 supervisorctl status
 
+# Start cron
+service cron start
+service cron status
+
 # Other commands you want to run when the container is started
 
 # End of the script

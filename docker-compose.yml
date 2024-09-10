@@ -18,6 +18,9 @@ services:
       - ./dev/script:/script                                                          # Danh sách các script
 
       - ./dev/supervisor/conf.d:/etc/supervisor/conf.d                                # Danh sách các cấu hình supervisor
+
+      - ./dev/cron/cron.d:/etc/cron.d                                                 # Danh sách các cấu hình cron
+      - ./dev/cron/log:/log/cron                                                      # Log cron
     ports:
       - 80:80
       - 443:443

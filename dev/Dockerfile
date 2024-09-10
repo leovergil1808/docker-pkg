@@ -60,6 +60,13 @@ RUN a2enmod ssl
 # Cài đặt supervisor
 RUN apt-get install -y supervisor
 
+# Cài đặt cron
+RUN apt-get install -y cron
+
 # Tạo thư mục chứa các script
 RUN mkdir /script
 RUN chmod 0777 -R /script
+
+# Tạo thư mục chứa các log
+RUN mkdir /log
+RUN chmod 0777 -R /log

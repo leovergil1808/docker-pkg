@@ -9,3 +9,5 @@
 /web/ssl/*.crt
 /web/ssl/*.key
 /web/ssl/*.ca-bundle
+
+/dev/cron/log

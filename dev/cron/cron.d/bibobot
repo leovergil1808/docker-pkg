@@ -6,9 +6,9 @@
 
 # Xóa bỏ tiến trình schedule woker lúc 0h mỗi ngày - sau khi kill tiến trình supervisor sẽ tự tạo lại
 0 0 * * * root bash -c 'echo "$(date +\%d-\%m-\%Y): Khởi động lại tiến trình schedule worker" >> /log/cron/bibobot/$(date +\%d-\%m-\%Y).log'
-0 0 * * * * root bash -c 'pkill -f "php artisan schedule:work"'
+0 0 * * * root bash -c 'pkill -f "php artisan schedule:work"'
 
 # Xóa bỏ tiến trình queue work lúc 0h mỗi ngày - sau khi kill tiến trình supervisor sẽ tự tạo lại
 0 0 * * * root bash -c 'echo "$(date +\%d-\%m-\%Y): Khởi động lại tiến trình queue worker" >> /log/cron/bibobot/$(date +\%d-\%m-\%Y).log'
-0 0 * * * * root bash -c 'pkill -f "php artisan queue:work"'
+0 0 * * * root bash -c 'pkill -f "php artisan queue:work"'
 

@@ -10,4 +10,7 @@
 /web/ssl/*.key
 /web/ssl/*.ca-bundle
 
+/dev/log/
 /dev/cron/log
+
+/meilisearch_data/

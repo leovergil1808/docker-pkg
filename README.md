@@ -51,6 +51,8 @@ git config --global --list<br>
 apt-get -y install vim<br>
 4. Cài composer
 apt-get -y install composer<br>
+5. Cài make
+apt-get -y install make<br>
 </pre>
 
 <h3><i>Cài đặt liên quan đến docker</i></h3>

@@ -36,7 +36,7 @@ RUN docker-php-ext-configure gd --enable-gd --with-freetype --with-jpeg \
 RUN apt-get install -y sudo
 
 # Cài Git để quản lý mã nguồn
-RUN apt-get -y install git
+RUN apt-get update && apt-get -y install git --fix-missing
 
 # Cài Unzip để giải nén các tệp tin
 RUN apt-get -y install unzip
@@ -47,12 +47,15 @@ RUN apt-get -y install vim
 # Cài wget để tải các tệp tin từ Internet
 RUN apt-get install -y wget
 
-# Cài node 16
-RUN curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+# Cài node mới nhất
+RUN curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
 RUN apt-get install -y nodejs
 
 # Cài trình biên dịch scss
 RUN npm install -g sass
+
+# Cài trình biên dịch scss
+RUN npm install -g npm@latest
 
 # Khởi động module thiết lập ssl
 RUN a2enmod ssl

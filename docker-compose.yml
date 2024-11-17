@@ -10,6 +10,8 @@ services:
       - ../shop:/var/www/html/shop
       - ../japanese:/var/www/html/japanese
       - ../subStandardBingX:/var/www/html/subStandardBingX
+      - ../soiChieuSaoKe:/var/www/html/soiChieuSaoKe
+      - ../starChicken:/var/www/html/starChicken
       # - ../laravel:/var/www/html/laravel
 
       - ./dev/config/vhost.conf:/etc/apache2/sites-available/000-default.conf         # Thiết lập Virtual Host
@@ -21,6 +23,8 @@ services:
 
       - ./dev/cron/cron.d:/etc/cron.d                                                 # Danh sách các cấu hình cron
       - ./dev/cron/log:/log/cron                                                      # Log cron
+
+      - ./dev/log/apache2:/var/log/apache2                                               # Mount log Apache ra host
     ports:
       - 80:80
       - 443:443
@@ -42,3 +46,10 @@ services:
     restart: always
     ports:
       - 8080:8080
+
+  meilisearch:
+    image: getmeili/meilisearch:latest
+    ports:
+      - 7700:7700
+    volumes:
+      - ./meilisearch_data:/meili_data

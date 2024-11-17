@@ -24,6 +24,9 @@ list:
 	@echo "$(MAGENTA)6. Vào container develop:                        $(YELLOW)make develop"
 	@echo "$(MAGENTA)7. Vào container db:                             $(YELLOW)make db"
 
+	@echo "\n$(CYAN)Nhóm database"
+	@echo "$(MAGENTA)1. Import file sql vào database:                 $(YELLOW)make db-import database={tên database} source={tên file sql - chỉ load trong thư mục init}"
+
 	@echo "\n$(CYAN)Nhóm supervisor"
 	@echo "$(MAGENTA)1. Hiện danh sách supervisor:                    $(YELLOW)make supervisor-show"
 	@echo "$(MAGENTA)2. Khởi động lại supervisor:                     $(YELLOW)make supervisor-restart name={tên supervisor}"
@@ -73,6 +76,13 @@ db:
 	@echo "Vào container db ..."
 	@echo "$(MAGENTA)"
 	docker compose exec db bash
+	@echo "$(RESET)"
+
+db-import:
+	@echo "$(GREEN)"
+	@echo "Import dữ liệu file sql vào database: ${database} => ${source} "
+	@echo "$(MAGENTA)"
+	docker compose exec db bash -c "mysql -u root -p ${database} < /data/init/${source}.sql"
 	@echo "$(RESET)"
 
 supervisor-show:

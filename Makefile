@@ -80,9 +80,16 @@ db:
 
 db-import:
 	@echo "$(GREEN)"
-	@echo "Import dữ liệu file sql vào database: ${database} => ${source} "
+	@echo "Import dữ liệu file sql vào database: ${database} => ${source}.sql "
 	@echo "$(MAGENTA)"
 	docker compose exec db bash -c "mysql -u root -p ${database} < /data/init/${source}.sql"
+	@echo "$(RESET)"
+
+db-export:
+	@echo "$(GREEN)"
+	@echo "Export dữ liệu từ database thành file sql: ${database} => ${source}.sql "
+	@echo "$(MAGENTA)"
+	docker compose exec db bash -c "mysqldump -u root -p ${database} > /data/init/${source}.sql"
 	@echo "$(RESET)"
 
 supervisor-show:

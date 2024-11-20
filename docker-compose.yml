@@ -3,15 +3,11 @@ services:
     build: ./dev
     volumes:                                                                          # Danh sách dự án đưa vào VM
       - ../home.html:/var/www/html/index.html
-      - ../autotradebot:/var/www/html/autotradebot
       - ../bibobot:/var/www/html/bibobot
-      - ../getPriceBot:/var/www/html/getPriceBot
       - ../ismart:/var/www/html/ismart
       - ../shop:/var/www/html/shop
       - ../japanese:/var/www/html/japanese
-      - ../subStandardBingX:/var/www/html/subStandardBingX
       - ../soiChieuSaoKe:/var/www/html/soiChieuSaoKe
-      - ../starChicken:/var/www/html/starChicken
       # - ../laravel:/var/www/html/laravel
 
       - ./dev/config/vhost.conf:/etc/apache2/sites-available/000-default.conf         # Thiết lập Virtual Host

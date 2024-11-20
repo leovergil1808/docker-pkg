@@ -26,6 +26,7 @@ list:
 
 	@echo "\n$(CYAN)Nhóm database"
 	@echo "$(MAGENTA)1. Import file sql vào database:                 $(YELLOW)make db-import database={tên database} source={tên file sql - chỉ load trong thư mục init}"
+	@echo "$(MAGENTA)2. Export database ra file sql:                  $(YELLOW)make db-export database={tên database} source={tên file sql - chỉ load trong thư mục init}"
 
 	@echo "\n$(CYAN)Nhóm supervisor"
 	@echo "$(MAGENTA)1. Hiện danh sách supervisor:                    $(YELLOW)make supervisor-show"

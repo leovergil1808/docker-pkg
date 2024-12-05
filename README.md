@@ -12,7 +12,8 @@ wsl --unregister <Tên wsl>
 
 <pre>
 Tạo ssh key trên máy tính ( phân loại cho dễ quản lý qua tên thư mục )
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/{tên thư mục}/id_rsa
+ssh_key_path=~/.ssh/{tên thư mục}
+mkdir -p "$ssh_key_path" && ssh-keygen -t rsa -b 4096 -f "$ssh_key_path/id_rsa"
 </pre>
 <pre>
 1. Thay đổi mật khẩu đăng nhập root ( nếu cần )

@@ -66,6 +66,21 @@ RUN apt-get install -y supervisor
 # Cài đặt cron
 RUN apt-get install -y cron
 
+# Cài đặt sql server
+RUN apt update && apt install -y \
+    gnupg2 unixodbc unixodbc-dev curl \
+    && curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - \
+    && curl https://packages.microsoft.com/config/debian/11/prod.list | tee /etc/apt/sources.list.d/mssql-release.list \
+    && apt update \
+    && ACCEPT_EULA=Y apt install -y msodbcsql17
+
+# Cài đặt SQLSRV và PDO_SQLSRV
+RUN pecl install sqlsrv pdo_sqlsrv \
+    && docker-php-ext-enable sqlsrv pdo_sqlsrv
+
+# Restart Apache để load cấu hình mới
+RUN service apache2 restart
+
 # Tạo thư mục chứa các script
 RUN mkdir /script
 RUN chmod 0777 -R /script

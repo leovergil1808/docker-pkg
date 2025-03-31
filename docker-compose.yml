@@ -6,6 +6,7 @@ services:
       - ../bibobot:/var/www/html/bibobot
       - ../ismart:/var/www/html/ismart
       - ../shop:/var/www/html/shop
+      - ../silkroadWeb:/var/www/html/silkroad
       - ../japanese:/var/www/html/japanese
       - ../soiChieuSaoKe:/var/www/html/soiChieuSaoKe
       # - ../laravel:/var/www/html/laravel
